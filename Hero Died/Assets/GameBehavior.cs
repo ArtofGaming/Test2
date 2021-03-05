@@ -91,6 +91,9 @@ public class GameBehavior : MonoBehaviour, IManager
         _state = "Manager initialized..";
         _state.FancyDebug();
         Debug.Log(_state);
+        lootStack.Push("Peek");
+        lootStack.Push("Cloak");
+        lootStack.Push("Health+");
     }
 
     // Start is called before the first frame update
