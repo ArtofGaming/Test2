@@ -12,29 +12,18 @@ public class ItemBehavior : MonoBehaviour
     {
         gameManager = GameObject.Find("god").GetComponent<GameBehavior>();
         peekpickup = GameObject.Find("Peek Pickup");
-        disappear = GetComponent<Renderer>().material;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     
     void OnCollisionEnter(Collision collision)
     {
         
         if (collision.gameObject.name == "Player")
         {
-            if (gameObject == peekpickup)
-            {
-                disappear.color = Color.red;
-            }
-
-            Destroy(this.transform.gameObject);
-            
+            Destroy(peekpickup);
             Debug.Log("Item collected!");
             gameManager.Items += 1;
+            gameManager.PrintLootReport();
         }
     }
 
