@@ -14,7 +14,6 @@ public class ManagerScene : MonoBehaviour
     {
         scene = SceneManager.GetActiveScene();
         startButton.onClick.AddListener(StartUp);
-        startButton.onClick.AddListener(Quit);
     }
 
     // Update is called once per frame
@@ -25,11 +24,7 @@ public class ManagerScene : MonoBehaviour
 
     void StartUp ()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene(1);
     }
 
-    void Quit ()
-    {
-        Application.Quit();
-    }
 }
