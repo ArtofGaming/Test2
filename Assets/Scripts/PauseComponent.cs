@@ -11,7 +11,8 @@ public class PauseComponent : MonoBehaviour
     {
         pauseScreen.SetActive(false);
         SetPauseButtonActive(false);
-        Invoke("DelayPauseAppear", 5);
+        Invoke("DelayPauseAppear", 1);
+        Time.timeScale = 1;
     }
     // Start is called before the first frame update
     void Start()
@@ -34,7 +35,8 @@ public class PauseComponent : MonoBehaviour
             col.pressedColor = new Color32(0, 0, 0, 0);
             col.disabledColor = new Color32(0, 0, 0, 0);
             GetComponentInChildren<Toggle>().interactable = false;
-        }        else
+        }
+        else
         {
             col.normalColor = new Color32(245, 245, 245, 255);
             col.highlightedColor = new Color32(245, 245, 245, 255); col.pressedColor = new Color32(200, 200, 200, 255);
@@ -48,7 +50,8 @@ public class PauseComponent : MonoBehaviour
     void DelayPauseAppear()
     {
         SetPauseButtonActive(true);
-    }    public void PauseGame()
+    }
+    public void PauseGame()
     {
         pauseScreen.SetActive(true);
         SetPauseButtonActive(false);
@@ -59,9 +62,11 @@ public class PauseComponent : MonoBehaviour
         pauseScreen.SetActive(false);
         SetPauseButtonActive(true);
         Time.timeScale = 1;
-    }    public void Quit()
+    }
+    public void Quit()
     {
         Time.timeScale = 1;
-    }
+    }
+
 }
 
